@@ -1,19 +1,6 @@
 Rails.application.routes.draw do
+  root 'dishes#index'
   resources :dishes
-  get 'dishes_controller/index'
-
-  get 'dishes_controller/show'
-
-  get 'dishes_controller/new'
-
-  get 'dishes_controller/edit'
-
-  get 'dishes_controller/create'
-
-  get 'dishes_controller/update'
-
-  get 'dishes_controller/destroy'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
