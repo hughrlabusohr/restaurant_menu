@@ -1,0 +1,28 @@
+<div class="bigformdiv">
+  <div class="formdiv">
+    <%= form_for(@dish) do |f| %>
+      <% if @dish.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this performed_exercise from being saved:</h2>
+
+          <ul>
+          <% @dish.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :dish %><br>
+        <%= f.text_field :dish %>
+      </div>
+      <div class="select">
+        <%= f.select(:dish_id, options_for_select([["Appetizer", 1], ["Salad", 2], ["Entree", 3], ["Dessert", 4]])) %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
