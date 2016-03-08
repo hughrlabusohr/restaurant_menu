@@ -26,8 +26,12 @@
         <%= f.text_area :description %>
       </div>
       <div class="select">
+        <% if params[:action] == "edit" %>
         <%= f.label :course_id %><br>
-        <%= f.select(:dish_id, options_for_select([["Appetizer", 1], ["Salad", 2], ["Entree", 3], ["Dessert", 4]])) %>
+        <%= f.collection_select:course_id, Course.all, :id, :name %>
+        <% f.select(:course_id, options_for_select([["Appetizers", 1], ["Soup or Salad", 2], ["Entrees", 3], ["Desserts", 4]])) %>
+        <% else %>
+        <%=f.hidden_field :course_id%>
       </div>
       <div class="actions">
         <%= f.submit %>
