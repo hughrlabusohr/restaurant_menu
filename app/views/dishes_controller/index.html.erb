@@ -1,2 +1,30 @@
-<h1>DishesController#index</h1>
-<p>Find me in app/views/dishes_controller/index.html.erb</p>
+<p id="notice"><%=notice %></p>
+
+<h1>Welcome to Captain Stanleys</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag asset_url("appetizers.jpg"), id: "appetizers" %>
+    <%= image_tag asset_url("soup_or_salad.jpg"), id: "soup_or_salad" %>
+    <%= image_tag asset_url("entrees.jpg"), id: "entrees" %>
+    <%= image_tag asset_url("dessert.jpg"), id: "dessert" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h2><span>Price</span><span>Name</span><span>Description</span><span>Course</span></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <%=link_to 'Show', dish%>
+    <%=link_to 'Edit', edit_dish_path(dish)%>
+    <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<%= link_to 'New Dish' new_dish_path %>

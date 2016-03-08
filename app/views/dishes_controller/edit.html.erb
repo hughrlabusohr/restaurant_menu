@@ -1,2 +1,5 @@
-<h1>DishesController#edit</h1>
-<p>Find me in app/views/dishes_controller/edit.html.erb</p>
+<h1>Edit your Dishes</h1>
+
+<%render 'form'%>
+<%=link_to 'Show', @dish%>
+<%=link_to 'Back', dishes_path
